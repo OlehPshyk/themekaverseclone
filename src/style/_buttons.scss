@@ -1,0 +1,89 @@
+// .clbtn{
+// 	@include outline(0);
+// 	display: inline-flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	font-family: $global-font-family;
+// 	font-size: 16px;
+// 	line-height: 1.5;
+// 	font-weight: 600;
+// 	min-width: 120px;
+// 	border-radius: 5px;
+// 	padding: 12px 20px;    
+// 	border: 1px solid #2081e2;    
+// 	text-decoration: none;
+// 	transition: all 0.2s ease 0s;
+// 	cursor: pointer;
+// 	@include breakpoint(xl){
+// 		min-width: 167px;
+// 	}
+// 	&:hover{
+// 		box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
+// 	}
+// 	&-main{
+// 		background-color: #2081e2;
+// 		color: #fff;
+// 		&:hover{
+// 			background-color: #1868b7;
+// 		}
+// 	}
+// 	&-secondary{
+// 		background-color: #fff;
+// 		color: #2081e2;
+// 		&:hover{
+// 			color: #1868b7;
+// 		}
+// 	}	
+// }
+
+.wallet-btn{
+  @include outline(0);  
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-family: $global-font-family;
+	font-size: 14px;
+	line-height: 32px;
+	font-weight: 400;
+	color: #fff;
+  background-color: #01030d;
+  border: none;
+  padding: 6px 20px;
+  transition: background-color .3s ease-in-out;
+  
+	text-decoration: none;	
+  appearance: button;
+  cursor: pointer;
+  &:hover{
+    background-color: #6c77ea;
+  }
+}
+
+.hero-link{
+  @include outline(0); 
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 10;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none; 
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-family: $global-font-family;	
+	font-weight: 400;
+	color: #fff;
+  background: #4753d6;
+  padding: 25px 50px;
+  transition: background-color .3s ease-in-out;
+  border: none;
+	
+  appearance: button;
+  cursor: pointer;
+  &:hover{
+    background: #6c77ea;
+  }
+}

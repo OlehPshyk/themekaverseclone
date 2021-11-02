@@ -1,0 +1,33 @@
+//base of BS4 breakpoints
+$screen-xs: 0;
+$xs: $screen-xs;
+$screen-sm: 576px;
+$sm: $screen-sm;
+$screen-md: 768px;
+$md: $screen-md;
+$screen-lg: 992px;
+$lg: $screen-lg;
+$screen-xl: 1200px;
+$xl: $screen-xl;
+$screen-xxl: 1920px;
+$xxl: $screen-xxl;
+
+// $content-width: 1920px;
+$content-width: 1160px;;//1440px;
+$pad-x: 20px;
+$pad-x-xl: 30px;
+
+//headings
+// $map-heading-size: ( h1: 32px, h2: 28px, h3: 20.5px, h4: 16px, h5: 13px, h6: 10px, );
+// $scale-heading-for-xs: 1;
+// $scale-heading-for-sm: 1;
+// $scale-heading-for-md: 1;
+
+$app-bg: #01030d;
+
+$global-font-family: 'Space Grotesk', sans-serif;
+$global-font-size: 14px; 
+$global-text-color: #444;
+// $global-link-color: #2081e2;
+
+$secondary-text-color: #000;
