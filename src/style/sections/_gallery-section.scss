@@ -1,0 +1,75 @@
+.gallery-section{
+  padding: 0 0 200px;
+  .gallery-slider{
+    .slick-dots{
+      li{
+        width: unset;
+        height: unset;
+        margin: unset;
+        &.slick-active{
+          button{
+            height: 13px;
+            background: #fff;
+          }
+        }
+      }
+      button{
+        padding: 0;
+        width: 40px;
+        height: 12px;
+        background: #4e619a;
+        margin: 1px;
+        border: 5px solid #01030d;
+        border-radius: 5px;
+        transition: all .3s ease-in-out;
+        &:before{
+          content: none;
+        }
+      }
+    }
+  }  
+  .gallery-item-container{
+    margin: 30px 1vw;
+    @include breakpoint(xl){
+      margin: 30px 12px;
+    }
+    padding: 0 15px;
+    transition: padding .3s ease-in-out;    
+  }
+  .gallery-item{
+    width: 40vw;
+    max-width: 440px;
+    transition: transform .3s ease-in-out;    
+    cursor: pointer;
+    transform: scale(1); 
+    &:hover{
+      transform: scale(1.01);         
+    }
+  }
+  .img-ratio-container{
+    padding-bottom: 100%;
+    position: relative;
+  }
+  .img-container{
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    height: 100%;
+    overflow: hidden;  
+  }
+  .gallery-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;    
+  }  
+  .slick-current{
+    .gallery-item{
+      transform: scale(1.1); 
+    }
+    .gallery-item-container{
+      padding: 0 20px;
+    }    
+  }
+}
