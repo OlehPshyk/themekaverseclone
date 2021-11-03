@@ -1,0 +1,79 @@
+.presentation-section{
+  padding: 100px 0 70px;
+  @media screen and (min-width: 781px){
+    padding: 150px 0;
+  }    
+  overflow: hidden;
+  .presentation-container{    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    flex-direction: column;
+    @media screen and (min-width: 961px){
+      flex-direction: row;
+    }  
+  }
+  .description{
+    margin-bottom: 70px;
+    @media screen and (min-width: 671px){
+      margin-bottom: 80px;
+      width: 77.77%;
+    }
+    @media screen and (min-width: 961px){
+      width: calc(50% - 60px);
+      min-width: 370px;
+      margin-bottom: unset;
+    }    
+  }
+  .title{
+    font-family: $global-font-family;
+    
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 35px;
+
+    font-size: 38px;
+    line-height: 1.33;
+    @include breakpoint(xl){
+      font-size: 46px;
+      line-height: 1.17;
+    }
+    .accent{
+      display: block;
+      background: linear-gradient(90deg,#d02561,#ff79a8);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  p{
+    &:not(:last-child){
+      margin-bottom: 30px;
+    }
+  }
+  .presentation-video-container{
+    position: relative;
+    @media screen and (min-width: 671px){      
+      width: 77.77%;
+    }
+    @media screen and (min-width: 961px){
+      width: calc(50% - 30px);
+    }
+    &:after{
+      width: 100px;
+      height: 100px;
+      right: -40px;
+      position: absolute;
+      content: "";
+      background: url('/src/static/img/pyramyd.png') no-repeat 50% 50%/contain;      
+      top: 60px;
+      @media screen and (min-width: 671px){   
+        width: 145px;
+        height: 145px;
+        right: -60px;
+      }      
+    }
+  }
+  .presentation-video{
+    width: 100%;
+  }
+}
