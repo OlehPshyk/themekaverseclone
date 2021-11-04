@@ -1,0 +1,85 @@
+.team{
+  padding: 100px 0 200px;
+  overflow: hidden;
+  .intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+    @media screen and (min-width: 781px){
+      margin-bottom: 150px;
+    }
+    @media screen and (min-width: 961px){
+      flex-direction: row;
+    }
+    .title{
+      width: 100%;
+      @media screen and (min-width: 671px){
+        width: 77.77%;
+      }
+      text-align: left;
+      margin-bottom: 30px;
+      @media screen and (min-width: 961px){
+        width: 44.44%;
+        text-align: right;        
+      }
+      position: relative;
+      padding-right: 70px;
+      &:after{
+        position: absolute;
+        content: "";        
+        background: url('/src/static/img/golden_pyramyd.png') no-repeat 50% 50%/contain;
+        width: 123px;
+        height: 123px;
+
+        right: -12vw;
+        top: 4px;
+        transform: rotate(163deg);
+        @media screen and (min-width: 401px){
+          right: 5vw;
+          top: -70px;
+        }
+        @media screen and (min-width: 671px){
+          right: 5vw;
+          top: -70px;
+          transform: rotate(105deg);
+        }
+        @media screen and (min-width: 961px){
+          left: -60px;
+          right: unset;
+          top: -100px;
+        }
+      }
+    }
+    .title1{      
+      font-family: $global-font-family;    
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 40px;
+      line-height: 1;      
+    }
+    .title2{    
+      font-family: $global-font-family;    
+      font-weight: 700;      
+      font-size: 50px;
+      line-height: 1;
+      background: linear-gradient(90deg,#d02561,#ff79a8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .presentations{
+      width: 100%;
+      @media screen and (min-width: 671px){
+        width: 77.77%;
+      }
+      @media screen and (min-width: 961px){
+        width: 55.55%;
+      } 
+      p{
+        margin: 0;
+      }     
+    }
+  }
+  
+}
