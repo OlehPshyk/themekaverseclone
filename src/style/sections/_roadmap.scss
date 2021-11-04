@@ -32,6 +32,15 @@
     }
     padding: 80px 0 0;
   }
+  .timeline-video-box{
+    position: absolute;
+    left: 77.77%;
+    top: -250px;
+    margin: 0;
+  }
+  .timeline-video{
+    width: 600px;
+  }
   .timeline{
     display: flex;
     flex-direction: column;  
