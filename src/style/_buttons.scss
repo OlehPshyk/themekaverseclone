@@ -87,3 +87,26 @@
     background: #6c77ea;
   }
 }
+
+.discord-btn{
+  @include outline(0);  
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-family: $global-font-family;
+	font-size: 18px;
+	line-height: 1.78;
+	font-weight: 700;
+	color: #fff;
+  background-color: #4753d6;
+  border: none;
+  padding: 16px 30px;
+  transition: background-color .3s ease-in-out;
+  
+	text-decoration: none;	
+  appearance: button;
+  cursor: pointer;
+  &:hover{
+    background: #6c77ea;
+  }
+}
