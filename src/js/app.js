@@ -41,6 +41,34 @@ document.addEventListener('DOMContentLoaded', () => {
   
   $('.js-work-slider').css({"opacity": "1","transition": "opacity 0.5s ease"});
 
+  let heroVideo = document.getElementById('hero-video');
+  document.addEventListener('scroll', function() {    
+    heroVideo.style.transform=`translateY(${window.pageYOffset/2}px)`;
+  });  
+  heroVideo.addEventListener('loadedmetadata', () => {
+    const registerVideo = (bound, video) => {
+      bound = document.querySelector(bound);
+      video = document.querySelector(video);
+      const scrollVideo = ()=>{
+        if(video.duration) {        
+          const rawPercentScrolled = window.pageYOffset / window.innerHeight;
+          const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
+          video.currentTime = video.duration * percentScrolled;
+          // video.currentTime = video.duration * Math.min(Math.max(window.pageYOffset / window.innerHeight, 0), 1);
+        }      
+        requestAnimationFrame(scrollVideo);      
+      }
+      requestAnimationFrame(scrollVideo);    
+    }
+    registerVideo("#hero-video", "#hero-video");
+  })
+
+  
+
+  
+
+  
+
 });
 if (module.hot) {
   module.hot.accept();
