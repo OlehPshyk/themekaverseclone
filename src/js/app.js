@@ -1,9 +1,13 @@
 import 'slick-carousel';
 
-document.addEventListener('DOMContentLoaded', () => { 
-  // console.log("Start APP");
 
-
+document.addEventListener('DOMContentLoaded', () => {
+  const removeLoading = () => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.querySelector('.global-loader').style.opacity=(0);    
+    setTimeout(function(){document.querySelector('.global-loader').remove();},1000);
+  }
+  setTimeout(removeLoading,300); 
 
   $('.js-gallery-slider').slick({
     arrows: false,
