@@ -42,9 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.js-work-slider').css({"opacity": "1","transition": "opacity 0.5s ease"});
 
   let heroVideo = document.getElementById('hero-video');
+  let timelineVideo = document.getElementById('timeline');
+  let timelineContainer = document.querySelector('#timeline-container');
+
   document.addEventListener('scroll', function() {    
     heroVideo.style.transform=`translateY(${window.pageYOffset/2}px)`;
+    let containerTop = timelineContainer.getBoundingClientRect().top;
+    if(containerTop < (250 + window.innerHeight*0.2)) {      
+      timelineVideo.style.transform=`translateY(${ (containerTop - window.innerHeight*0.2 - 250)*(-1) }px)`;
+    }else{
+      timelineVideo.style.transform=`translateY(0)`;
+    }
   });  
+
   heroVideo.addEventListener('loadedmetadata', () => {
     const registerVideo = (bound, video) => {
       bound = document.querySelector(bound);
@@ -52,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const scrollVideo = ()=>{
         if(video.duration) {        
           const rawPercentScrolled = window.pageYOffset / window.innerHeight;
-          const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
+          const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);          
           video.currentTime = video.duration * percentScrolled;
           // video.currentTime = video.duration * Math.min(Math.max(window.pageYOffset / window.innerHeight, 0), 1);
         }      
@@ -64,9 +74,28 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   
-
+  timelineVideo.addEventListener('loadedmetadata', () => {
+    const registerVideoContainer = (bound, video) => {
+      bound = document.querySelector(bound);
+      video = document.querySelector(video);
+      const scrollVideo = ()=>{
+        if(video.duration) {
+          const distanceFromTop = window.scrollY + bound.getBoundingClientRect().top - 250;
+          const rawPercentScrolled = (window.scrollY - distanceFromTop) / (bound.scrollHeight - window.innerHeight + 250);
+          const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);          
+          video.currentTime = video.duration * percentScrolled;
+        }
+        requestAnimationFrame(scrollVideo);
+      }
+      requestAnimationFrame(scrollVideo);
+    }
+    
+    
+    registerVideoContainer("#timeline-container", "#timeline");
+  })
   
 
+  
   
 
 });
