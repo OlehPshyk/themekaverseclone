@@ -1,13 +1,22 @@
 import 'slick-carousel';
-
+import AOS from 'aos';
 
 document.addEventListener('DOMContentLoaded', () => {
   const removeLoading = () => {
+    document.querySelector('.global-loader').remove();
+    AOS.init({
+      duration: 800,
+      easing: 'ease',
+      once: true,
+     });
+  }
+  
+  const fadeLoading = () => {
     window.scrollTo({ top: 0, behavior: 'auto' });
     document.querySelector('.global-loader').style.opacity=(0);    
-    setTimeout(function(){document.querySelector('.global-loader').remove();},1000);
+    setTimeout(removeLoading,1000);
   }
-  setTimeout(removeLoading,300); 
+  setTimeout(fadeLoading,300); 
 
   $('.js-gallery-slider').slick({
     arrows: false,
