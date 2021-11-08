@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const removeLoading = () => {
     document.querySelector('.global-loader').remove();
     AOS.init({
-      duration: 800,
-      easing: 'ease',
+      // duration: 800,
+      easing: 'custom-cubic-bezier', //(0.5, 0, 0, 1)
       once: true,
+      // disable: 'mobile'
      });
   }
   

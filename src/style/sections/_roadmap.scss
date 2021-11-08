@@ -41,7 +41,11 @@
     margin: 0;
   }
   .timeline-video{
-    width: 600px;
+    display: none;
+    @include breakpoint(xl){
+      display: block;
+      width: 600px;
+    }
   }
   .timeline{
     display: flex;
